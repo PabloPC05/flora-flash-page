@@ -49,10 +49,11 @@ export default function Index() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                to="/el-vivero"
+                to="/identificador"
                 className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 backdrop-blur-sm border border-primary-foreground/25 px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/25 transition-colors"
               >
-                Conócenos
+                <ScanLine className="h-4 w-4" />
+                Escanear Planta
               </Link>
             </div>
           </motion.div>
