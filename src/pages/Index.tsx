@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Leaf, Sparkles } from 'lucide-react';
+import { ArrowRight, Leaf, Sparkles, ScanLine } from 'lucide-react';
 import heroImg from '@/assets/hero-vivero.jpg';
 import { mockProducts } from '@/data/products';
 import ProductCard from '@/components/catalog/ProductCard';
@@ -49,10 +49,11 @@ export default function Index() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                to="/el-vivero"
+                to="/identificador"
                 className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 backdrop-blur-sm border border-primary-foreground/25 px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/25 transition-colors"
               >
-                Conócenos
+                <ScanLine className="h-4 w-4" />
+                Escanear Planta
               </Link>
             </div>
           </motion.div>
@@ -116,33 +117,68 @@ export default function Index() {
         </div>
       </section>
 
-      {/* CTA Banner */}
+      {/* AI Scanner Banner */}
       <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-3xl bg-primary px-8 py-12 lg:px-16 lg:py-16 text-center"
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary/80 px-8 py-12 lg:px-16 lg:py-16"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-primary-foreground/5 -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-primary-foreground/5 translate-y-1/2 -translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-primary-foreground/5 -translate-y-1/3 translate-x-1/3" />
+            <div className="absolute bottom-0 left-0 w-56 h-56 rounded-full bg-primary-foreground/5 translate-y-1/3 -translate-x-1/3" />
             
-            <div className="relative">
-              <h2 className="font-display text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
-                Visítanos en el vivero
-              </h2>
-              <p className="text-primary-foreground/80 max-w-lg mx-auto mb-8 leading-relaxed">
-                Ven a conocer nuestras plantas en persona. Te asesoramos para que encuentres la planta perfecta para tu hogar.
-              </p>
-              <Link
-                to="/contacto"
-                className="inline-flex items-center gap-2 rounded-full bg-primary-foreground px-6 py-3 text-sm font-semibold text-primary hover:opacity-90 transition-opacity"
-              >
-                Cómo llegar
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+            <div className="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+              <div className="flex-1 text-center lg:text-left">
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-primary-foreground/15 px-3 py-1 text-xs font-medium text-primary-foreground mb-4">
+                  <Sparkles className="h-3 w-3" />
+                  Inteligencia Artificial
+                </div>
+                <h2 className="font-display text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
+                  ¿No sabes qué planta tienes?
+                </h2>
+                <p className="text-primary-foreground/80 max-w-lg leading-relaxed mb-6">
+                  Usa nuestro identificador con inteligencia artificial. Sube una foto o apunta la cámara y descubre el nombre, los cuidados y mucho más.
+                </p>
+                <Link
+                  to="/identificador"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary-foreground px-6 py-3 text-sm font-semibold text-primary hover:opacity-90 transition-opacity"
+                >
+                  <ScanLine className="h-4 w-4" />
+                  Probar Identificador IA
+                </Link>
+              </div>
+              <div className="flex h-32 w-32 lg:h-40 lg:w-40 items-center justify-center rounded-full bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 animate-float">
+                <ScanLine className="h-14 w-14 lg:h-16 lg:w-16 text-primary-foreground" />
+              </div>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Visit CTA */}
+      <section className="py-16 lg:py-24 bg-muted/30">
+        <div className="container mx-auto px-4 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center max-w-2xl mx-auto"
+          >
+            <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Visítanos en el vivero
+            </h2>
+            <p className="text-muted-foreground mb-8 leading-relaxed">
+              Ven a conocer nuestras plantas en persona. Te asesoramos para que encuentres la planta perfecta para tu hogar.
+            </p>
+            <Link
+              to="/contacto"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+            >
+              Cómo llegar
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </motion.div>
         </div>
       </section>

@@ -6,6 +6,7 @@ import { Leaf, Menu, X } from 'lucide-react';
 const links = [
   { href: '/', label: 'Inicio' },
   { href: '/catalogo', label: 'Catálogo' },
+  { href: '/identificador', label: 'Identificador IA' },
   { href: '/contacto', label: 'Contacto' },
   { href: '/el-vivero', label: 'El Vivero' },
 ];
